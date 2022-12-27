@@ -1,16 +1,17 @@
 import java.util.*;
+import java.io.*;
 
-public class Pie extends Product
+public class Cupcake extends Product
 {
 	Component garnish;
 	Component filling;
-	Component crust;
-	Recipe pie_recipe;
+	Component batter;
+	Recipe recipe;
 
-	public Pie()
+	public Cupcake()
 	{
 		this.name = "blank";
-		this.type = "generic";
+		this.type = "cupcake";
 		this.amount = new int[50];
 		this.ingredients = new ArrayList<Ingredient>();
 		this.requiredIngredients = new ArrayList<String>();
