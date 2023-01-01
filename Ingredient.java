@@ -26,5 +26,11 @@ public class Ingredient
 	{
 
 	};
+
+
+	public void getAmount()
+	{
+		return this.amount;
+	};
 }
 //End class//

@@ -1,16 +1,16 @@
 import java.util.*;
+import java.io.*;
 
-public class Pie extends Product
+public class Muffin extends Product
 {
-	Component garnish;
-	Component filling;
-	Component crust;
-	Recipe pie_recipe;
+	Component mixIns;
+	Component batter;
+	Recipe recipe;
 
-	public Pie()
+	public Muffin()
 	{
 		this.name = "blank";
-		this.type = "generic";
+		this.type = "cupcake";
 		this.amount = new int[50];
 		this.ingredients = new ArrayList<Ingredient>();
 		this.requiredIngredients = new ArrayList<String>();
@@ -25,15 +25,15 @@ public class Pie extends Product
 
 	public void buildRecipe()
 	{
-		ArrayList<Ingredient> garnishAmount, fillingAmount, crustAmount;
+		ArrayList<Ingredient> garnish_ingredients, filling_ingredients, crust_ingredients;
 
 		garnish_ingredients = new ArrayList<Ingredient>[50];
 		filling_ingredients = new ArrayList<Ingredient>[50];
-		crustAmount = new ArrayList<Ingredients>[50];
+		crust_ingredients = new ArrayList<Ingredients>[50];
 
-		garnishAmount = this.garnish.getAmount();
-		fillingAmount = this.filling.getAmount();
-		crustAmount = this.crust.getAmount();
+		garnish_ingredients = this.garnish.getIngredientList();
+		filling_ingredients = this.filling.getIngredientList();
+		crust_ingredients = this.crust.getIngredientList();
 
 		double totalAmountNeeded;
 

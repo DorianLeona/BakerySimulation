@@ -1,16 +1,16 @@
 import java.util.*;
+import java.io.*;
 
-public class Pie extends Product
+public class Macaron extends Product
 {
-	Component garnish;
 	Component filling;
-	Component crust;
-	Recipe pie_recipe;
+	Component shells;
+	Recipe recipe;
 
-	public Pie()
+	public Macaron()
 	{
 		this.name = "blank";
-		this.type = "generic";
+		this.type = "macaron";
 		this.amount = new int[50];
 		this.ingredients = new ArrayList<Ingredient>();
 		this.requiredIngredients = new ArrayList<String>();
@@ -25,21 +25,19 @@ public class Pie extends Product
 
 	public void buildRecipe()
 	{
-		ArrayList<Ingredient> garnishAmount, fillingAmount, crustAmount;
+		ArrayList<Ingredient> fillingAmount, shellAmount;
 
-		garnish_ingredients = new ArrayList<Ingredient>[50];
-		filling_ingredients = new ArrayList<Ingredient>[50];
-		crustAmount = new ArrayList<Ingredients>[50];
+		fillingAmount = new ArrayList<Ingredient>[50];
+		shellAmount = new ArrayList<Ingredients>[50];
 
-		garnishAmount = this.garnish.getAmount();
-		fillingAmount = this.filling.getAmount();
-		crustAmount = this.crust.getAmount();
+		fillingAmount = this.filling.getIngredientList();
+		shellAmount = this.shell.getIngredientList();
 
 		double totalAmountNeeded;
 
 		for(int ingredient = 0; ingredient < 50; ingredient++)
 		{
-			totalAmountNeeded = garnishAmount[ingredient] + fillingAmount[ingredient] + crustAmount[ingredient];
+			totalAmountNeeded = fillingAmount[ingredient] + shellAmount[ingredient];
 			this.recipe.setAmount(ingredient, totalAmountNeeded);
 		}
 	};
